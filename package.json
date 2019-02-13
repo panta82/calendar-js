@@ -1,0 +1,14 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "description": "Frontend test from hackerrank.com",
+  "scripts": {
+		"start": "cd src && live-server --no-browser"
+	},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "prettier": "^1.16.4"
+  }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Calendar</title>
+		<link href="style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<h1>Calendar</h1>
+			<h2>Manage your appointments</h2>
+		</header>
+
+		<div class="container">
+			<div class="calendar-holder"></div>
+			<div class="day-holder"></div>
+		</div>
+
+		<div id="templates">
+			<div class="Calendar">
+				<div class="Calendar-header">
+					<button class="Calendar-prev">&#9664;</button>
+					<h3 class="Calendar-header-title"></h3>
+					<button class="Calendar-next">&#9654;</button>
+				</div>
+				<div class="Calendar-content"></div>
+			</div>
+
+			<div class="Day"></div>
+		</div>
+
+		<script src="app.js" type="application/javascript"></script>
+		<script type="application/javascript">
+			startApp();
+		</script>
+	</body>
+</html>
