@@ -12,8 +12,7 @@ Make a calendar app. The calendar should display all the dates for the current m
 
 ### Timing
 
-Time | Task
+Hours in | Task
 -----|-------------
-21:00|Project setup.
-22:00|Drawing calendar to screen. Added prettier and dev server.
-23:30|Drawing dates, calculating dates, interaction
+1|Project setup. Prettier and dev server. First drawing to screen.
+2:30|Drawing dates, calculating dates, interaction
