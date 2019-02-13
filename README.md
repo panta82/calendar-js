@@ -14,4 +14,6 @@ Make a calendar app. The calendar should display all the dates for the current m
 
 Time | Task
 -----|-------------
-21:00|Project setup
+21:00|Project setup.
+22:00|Drawing calendar to screen. Added prettier and dev server.
+23:30|Drawing dates, calculating dates, interaction

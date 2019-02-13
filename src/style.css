@@ -4,6 +4,11 @@
 
 /* Global */
 
+html, body {
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
 button {
 	background: linear-gradient(to bottom, #ddd, #eee);
 	box-shadow: -1px -1px 2px 1px inset rgba(0,0,0,0.2);
@@ -22,18 +27,48 @@ button:active {
 /* Calendar */
 
 .Calendar {
-	border: 1px solid #27372e;
+	border: 1px solid #333;
 	border-radius: 2px;
+	padding: 5px;
+}
+.Calendar-title {
+	flex-grow: 1;
+	padding: 0;
+	margin: 0;
+	text-align: center;
 }
 .Calendar-header {
-	background-color: #a2e0c3;
+	background-color: #b5d2e0;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 .Calendar-prev, .Calendar-next {
 	width: 40px;
+	height: 40px;
 }
-
-.Calendar-header-title {
-	flex-grow: 1;
+.Calendar-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: 5px;
+	grid-row-gap: 5px;
+	margin-top: 5px;
+}
+.Calendar-day {
+	border: 1px solid #888;
+	border-radius: 2px;
+	padding: 10px;
+	font-size: 16px;
+	text-align: center;
+}
+.Calendar-day.selectable {
+	cursor: pointer;
+}
+.Calendar-day.selectable:hover {
+	background: rgba(0,0,0,0.05);
+}
+.Calendar-day.past {
+	background-color: #eee;
+	color: #666;
 }
