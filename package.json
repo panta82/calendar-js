@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Frontend test from hackerrank.com",
   "scripts": {
-		"start": "cd src && live-server --no-browser"
-	},
+    "start": "cd src && live-server --no-browser"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {

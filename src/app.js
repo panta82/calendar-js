@@ -54,7 +54,9 @@ const TEMPLATES = {
 };
 
 function Calendar() {
-	const cNode = (this.node = TEMPLATES.calendar.cloneNode(true));
+  const thisCalendar = this;
+  
+	const cNode = TEMPLATES.calendar.cloneNode(true);
 	const cTitle = cNode.querySelector('.Calendar-title');
 	const cContent = cNode.querySelector('.Calendar-content');
 
@@ -71,10 +73,19 @@ function Calendar() {
 
 	this.update = update;
 	this.on = emitter.on;
+	this.mount = mount;
 
 	// ---
-
-	function update(state) {
+  
+  /**
+   * @return {Calendar}
+   */
+	function mount(target) {
+    target.appendChild(cNode);
+    return thisCalendar;
+  }
+  
+  function update(state) {
 		updateTitle(state);
 		updateDays(state);
 		renderedState = state;
@@ -101,7 +112,6 @@ function Calendar() {
 
 		// Recreate
 		const todayTs = tsToday();
-		const targetContainer = cNode.querySelector('.Calendar-content');
 		const date = new Date(state.activeMonthTs);
 		const startMonth = date.getMonth();
 		while (date.getMonth() === startMonth) {
@@ -119,7 +129,7 @@ function Calendar() {
 			if (dateTs === state.selectedDayTs) {
 				dayNode.className += ' selected';
 			}
-			targetContainer.appendChild(dayNode);
+      cContent.appendChild(dayNode);
 			date.setDate(date.getDate() + 1);
 		}
 	}
@@ -149,8 +159,7 @@ function run() {
 	});
 
 	/** @type {Calendar} */
-	const calendar = new Calendar();
-	document.querySelector('.calendar-holder').appendChild(calendar.node);
+	const calendar = new Calendar().mount(document.querySelector('.calendar-holder'));
 	calendar.on(EVENTS.next_month, () => {
 		console.log('next');
 		update({
